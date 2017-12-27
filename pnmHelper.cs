@@ -315,7 +315,6 @@ namespace CSImageViewer {
             String[] wh = s.Split();
             w[ 0 ] = Int32.Parse( wh[ 0 ] );
             h[ 0 ] = Int32.Parse( wh[ 1 ] );
-            int[] data = new int[ w[ 0 ] * h[ 0 ] * 3 ];
 
             //skip comments (if any)
             s = "#";

@@ -200,7 +200,7 @@ public class PNMHelper {
             }
             in.close();
         } catch (Exception e) {
-            System.err.println( "PNMHelper:PNMHelper: " + e );
+            System.err.println( "PNMHelper:read_binary_data: " + e );
         }
         assert tMax == mMax;
     }
@@ -268,6 +268,8 @@ public class PNMHelper {
             }
             out.writeBytes( mW + " " + mH + "\n" );
             setMinMax();
+            if (mMin < 0)
+                System.err.println( "PNMHelper:saveBinary: min (" + mMin + ") is less than zero." );
             out.writeBytes( mMax + "\n" );
             //write the data
             if (mMax < 256) {
@@ -283,7 +285,7 @@ public class PNMHelper {
             }
             out.close();
         } catch (Exception e) {
-            System.err.println( "PNMHelper:PNMHelper: " + e );
+            System.err.println( "PNMHelper:saveBinary: " + e );
         }
     }
     //--------------------------------------------------------------------
